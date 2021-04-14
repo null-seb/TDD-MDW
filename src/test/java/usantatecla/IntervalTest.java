@@ -75,4 +75,12 @@ public class IntervalTest {
     IntervalB=new IntervalBuilder().open(right.getLess()).open(right.getGreater()).build();
     assertTrue(IntervalA.intersect(IntervalB));
   }
+
+  @Test
+  public void givenTwoIntervalsOpenWhenIntersectionThenFalse(){
+    Interval IntervalA=new IntervalBuilder().open(left.getLess()).open(left.getEquals()).build();
+    Interval IntervalB=new IntervalBuilder().open(left.getEquals()).open(right.getGreater()).build();
+    assertFalse(IntervalA.intersect(IntervalB));
+  }
+
 }
