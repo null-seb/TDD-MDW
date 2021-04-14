@@ -110,6 +110,13 @@ public class IntervalTest {
     }
 
     @Test
+    public void givenOneIntervalsOpenAndOneIntervalsCloseWhenIntersectionThenTrue(){
+        Interval IntervalA = new IntervalBuilder().open(left.getLess()).open(left.getGreater()).build();
+        Interval IntervalB = new IntervalBuilder().closed(left.getEquals()).closed(right.getGreater()).build();
+        assertTrue(IntervalA.intersect(IntervalB));
+    }
+
+    @Test
     public void givenOneIntervalsOpenAndOneIntervalsCloseWhenIntersectionThenFalse(){
         Interval IntervalA = new IntervalBuilder().open(left.getLess()).open(left.getGreater()).build();
         Interval IntervalB = new IntervalBuilder().closed(left.getGreater()).closed(right.getGreater()).build();
