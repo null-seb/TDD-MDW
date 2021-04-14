@@ -12,6 +12,9 @@ public class Max {
     return this.value > value;
   }
 
+  public double getValue(){
+    return value;
+  }
   @Override
   public int hashCode() {
     final int prime = 31;
