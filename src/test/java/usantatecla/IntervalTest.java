@@ -109,4 +109,10 @@ public class IntervalTest {
         assertFalse(IntervalA.intersectClose(IntervalB));
     }
 
+    @Test
+    public void givenOneIntervalsOpenAndOneIntervalsCloseWhenIntersectionThenFalse(){
+        Interval IntervalA = new IntervalBuilder().open(left.getLess()).open(left.getGreater()).build();
+        Interval IntervalB = new IntervalBuilder().closed(left.getGreater()).closed(right.getGreater()).build();
+        assertFalse(IntervalA.intersect(IntervalB));
+    }
 }
