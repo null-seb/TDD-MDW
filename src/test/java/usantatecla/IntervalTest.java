@@ -81,6 +81,9 @@ public class IntervalTest {
     Interval IntervalA=new IntervalBuilder().open(left.getLess()).open(left.getEquals()).build();
     Interval IntervalB=new IntervalBuilder().open(left.getEquals()).open(right.getGreater()).build();
     assertFalse(IntervalA.intersect(IntervalB));
+    IntervalA=new IntervalBuilder().open(left.getLess()).open(left.getEquals()).build();
+    IntervalB=new IntervalBuilder().open(left.getGreater()).open(right.getGreater()).build();
+    assertFalse(IntervalA.intersect(IntervalB));
   }
 
 }
