@@ -20,6 +20,11 @@ public class Interval {
 			return false;
 		return true;
 	}
+	public boolean intersectClose(Interval interval){
+		if(this.getMax()<interval.getMin()||this.getMin()>interval.getMax())
+			return false;
+		return true;
+	}
 	public double getMin(){
 		return this.min.value;
 	}
